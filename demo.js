@@ -1,4 +1,4 @@
-var acme = require("acme");
+var acme = require("./lib/acme");
 
 acme.enableLocalUsage();
 
@@ -9,8 +9,8 @@ if (ENABLE_SERVER) {
   console.log("Server listening on port 4000");
 }
 
-var authzURL = "http://localhost:4000/acme/new-authz";
-var certURL = "http://localhost:4000/acme/new-cert";
+var authzURL = "https://www.letsencrypt-demo.org/acme/new-authz";
+var certURL = "https://www.letsencrypt-demo.org/acme/new-cert";
 acme.getMeACertificate(authzURL, certURL, "example.com", function(x) {
   console.log("Result of getMeACertificate:");
   console.log(x);
